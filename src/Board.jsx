@@ -1,5 +1,7 @@
 import Cell from "./Cell.jsx";
 import { useState } from "react";
+import Winner from "./Winner.jsx";
+import Click from "./Click.jsx";
 import "./Board.css";
 
 /** Game board of Lights out.
@@ -152,16 +154,8 @@ function Board({ nrows = 3, ncols = 3, chanceLightStartsOn = 33 }) {
           </table>
         </div>
       )}
-      {hasWon() && (
-        <div id="winner-div">
-          <p>YOU WIN!!!</p>
-          <button onClick={restart}>Play Again!</button>
-        </div>
-      )}
-
-      <div id="click-count">
-        <p>Clicks: {clicks}</p>
-      </div>
+      {hasWon() && <Winner restart={restart} />}
+      <Click clicks={clicks} />
     </div>
   );
 
