@@ -1,4 +1,4 @@
-import Board from "./Board.jsx";
+import Game from "./Game.jsx";
 import "./App.css";
 
 /** Simple app that just shows the LightsOut game. */
@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Board />
+      <Game />
     </div>
   );
 }
